@@ -33,6 +33,28 @@ class MainActivity : AppCompatActivity() {
 
                 return@setOnClickListener // Sale del bloque de código del evento click si la validación falla
             }
+            try {
+                numero1.toDouble() // Intenta convertir el primer número a Double para verificar que sea un número válido
+                numero2.toDouble() // Intenta convertir el segundo número a Double para verificar que sea un número válido
+            } catch (e: NumberFormatException) {
+                textViewResultado.text = "Por favor, ingrese números válidos" // Muestra un mensaje de error si la conversión a Double falla
+
+                return@setOnClickListener // Sale del bloque de código del evento click si la validación falla
+            }
+
+            if (!numero1.matches(Regex("-?\\d+(\\.\\d+)?")) || !numero2.matches(Regex("-?\\d+(\\.\\d+)?"))) {
+                textViewResultado.text = "Por favor, ingrese números válidos" // Muestra un mensaje de error si alguno de los campos no contiene un número válido
+
+                return@setOnClickListener // Sale del bloque de código del evento click si la validación falla
+            }
+            try {
+                numero1.toDouble() // Intenta convertir el primer número a Double para verificar que sea un número válido
+                numero2.toDouble() // Intenta convertir el segundo número a Double para verificar que sea un número válido
+            } catch (e: NumberFormatException) {
+                textViewResultado.text = "Por favor, ingrese números válidos" // Muestra un mensaje de error si la conversión a Double falla
+
+                return@setOnClickListener // Sale del bloque de código del evento click si la validación falla
+            }
 
             // Realiza la suma de los dos números ingresados, convirtiéndolos a Double para permitir decimales
             val suma = numero1.toDouble() + numero2.toDouble() // Realiza la suma de los dos números ingresados
