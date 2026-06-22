@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         // Configuración del evento click para el botón de calcular
         btnCalcular.setOnClickListener {
-            val numero1 = editTextNumber.text.toString().trim() // Obtiene el texto del primer EditText, lo convierte a String y elimina espacios en blanco`
+            val numero1 = editTextNumber.text.toString().trim() // Obtiene el texto del primer EditText, lo convierte a String y elimina espacios en blanco
             val numero2 = editTextNumber2.text.toString().trim()
 
             // Validación para asegurarse de que ambos campos no estén vacíos
